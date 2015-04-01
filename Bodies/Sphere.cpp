@@ -2,11 +2,17 @@
 #include "Sphere.h"
 
 
-CSphere::CSphere(void)
+CSphere::CSphere(double radius)
+	: m_radius(radius)
 {
 }
 
 
 CSphere::~CSphere(void)
 {
+}
+
+double CSphere::GetRadius() const
+{
+	return m_radius;
 }
