@@ -3,7 +3,8 @@ class CBody
 {
 public:
 	CBody(void);
-	~CBody(void);
+	// в базовом классе деструктор следует делать виртуальным
+	virtual ~CBody(void);
 
 	virtual double GetVolume() const = 0;
 };

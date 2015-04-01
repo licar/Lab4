@@ -8,7 +8,9 @@ public:
 	~CSphere(void);
 
 	double GetRadius() const;
-	double GetVolume() const;
+	// методы, переопредел€ющие методы базовых классов, рекомендуетс€ 
+	// объ€вл€ть со спецификатором override
+	double GetVolume() const override;
 
 private:
 	double m_radius;
