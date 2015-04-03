@@ -1,7 +1,7 @@
 #pragma once
 #include "Solidbody.h"
 
-class CSphere : public CSolidBody
+class CSphere final : public CSolidBody
 {
 public:
 	CSphere(double radius, double density);
@@ -10,7 +10,7 @@ public:
 	double GetRadius() const;
 	// методы, переопредел€ющие методы базовых классов, рекомендуетс€ 
 	// объ€вл€ть со спецификатором override
-	double GetVolume() const override;
+	double GetVolume() const override final;
 
 private:
 	double m_radius;

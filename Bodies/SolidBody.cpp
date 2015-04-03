@@ -7,7 +7,6 @@ CSolidBody::CSolidBody(double density)
 {
 }
 
-
 CSolidBody::~CSolidBody()
 {
 }
