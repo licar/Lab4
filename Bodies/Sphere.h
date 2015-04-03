@@ -1,7 +1,7 @@
 #pragma once
-#include "body.h"
+#include "Solidbody.h"
 
-class CSphere : public CBody
+class CSphere : public CSolidBody
 {
 public:
 	CSphere(double radius);
