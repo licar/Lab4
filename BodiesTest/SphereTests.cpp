@@ -5,6 +5,7 @@
 	имеет радиус
 	имеет объем
 	имеет плотность
+	имеет массу
 */
 
 static const double EXPECTED_RADIUS = 3.5;
@@ -16,7 +17,6 @@ struct SphereFixture
 
 	SphereFixture()
 		:sphere(EXPECTED_RADIUS, EXPECTED_DENSITY)
-
 	{
 	}
 };
@@ -40,6 +40,12 @@ BOOST_AUTO_TEST_CASE(HasDensity)
 {
 	BOOST_CHECK_EQUAL(sphere.GetDensity(), EXPECTED_DENSITY);
 }
+
+BOOST_AUTO_TEST_CASE(HasMass)
+{
+	BOOST_CHECK_EQUAL(sphere.GetMass(), EXPECTED_DENSITY * sphere.GetVolume());
+}
+
 
 BOOST_AUTO_TEST_SUITE_END()
 

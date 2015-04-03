@@ -8,7 +8,6 @@ CSphere::CSphere(double radius, double density)
 {
 }
 
-
 CSphere::~CSphere(void)
 {
 }
