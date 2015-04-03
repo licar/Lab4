@@ -4,7 +4,7 @@
 class CSphere : public CSolidBody
 {
 public:
-	CSphere(double radius);
+	CSphere(double radius, double density);
 	~CSphere(void);
 
 	double GetRadius() const;

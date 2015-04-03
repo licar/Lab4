@@ -2,8 +2,9 @@
 #include "Sphere.h"
 
 
-CSphere::CSphere(double radius)
-	: m_radius(radius)
+CSphere::CSphere(double radius, double density)
+	: CSolidBody(density)
+	, m_radius(radius)
 {
 }
 

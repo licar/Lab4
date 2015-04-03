@@ -4,16 +4,19 @@
 /* —фера
 	имеет радиус
 	имеет объем
+	имеет плотность
 */
 
 static const double EXPECTED_RADIUS = 3.5;
+static const double EXPECTED_DENSITY = 8920;
 
 struct SphereFixture
 {
 	CSphere sphere;
 
 	SphereFixture()
-		:sphere(EXPECTED_RADIUS)
+		:sphere(EXPECTED_RADIUS, EXPECTED_DENSITY)
+
 	{
 	}
 };
@@ -31,6 +34,11 @@ BOOST_AUTO_TEST_CASE(HasVolume)
 	BOOST_CHECK_EQUAL(sphere.GetVolume(), EXPECTED_VOLUME);
 	CBody & sphereAsBody = sphere;
 	BOOST_CHECK_EQUAL(sphereAsBody.GetVolume(), EXPECTED_VOLUME);
+}
+
+BOOST_AUTO_TEST_CASE(HasDensity)
+{
+	BOOST_CHECK_EQUAL(sphere.GetDensity(), EXPECTED_DENSITY);
 }
 
 BOOST_AUTO_TEST_SUITE_END()

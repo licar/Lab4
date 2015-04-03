@@ -7,5 +7,7 @@ public:
 	virtual ~CBody(void);
 
 	virtual double GetVolume() const = 0;
+
+	virtual double GetDensity() const = 0;
 };
 
