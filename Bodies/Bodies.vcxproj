@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Body.h" />
+    <ClInclude Include="Parallelepiped.h" />
     <ClInclude Include="SolidBody.h" />
     <ClInclude Include="Sphere.h" />
     <ClInclude Include="stdafx.h" />
@@ -86,6 +87,7 @@
   <ItemGroup>
     <ClCompile Include="Bodies.cpp" />
     <ClCompile Include="Body.cpp" />
+    <ClCompile Include="Parallelepiped.cpp" />
     <ClCompile Include="SolidBody.cpp" />
     <ClCompile Include="Sphere.cpp" />
     <ClCompile Include="stdafx.cpp">
