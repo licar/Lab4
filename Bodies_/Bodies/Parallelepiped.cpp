@@ -38,3 +38,18 @@ double CParallelepiped::GetDeep() const
 {
 	return m_deep;
 }
+
+string CParallelepiped::GetName() const
+{
+	return "parallelepiped";
+}
+
+string CParallelepiped::GetInfo() const
+{
+	string info = GetName() + '\n' +
+		"height = " + to_string(GetHeight()) + '\n' +
+		"widht = " + to_string(GetWidht()) + '\n' +
+		"deep = " + to_string(GetDeep()) + '\n' +
+		"value = " + to_string(GetVolume()) + '\n' +
+		"mass = " + to_string(GetMass());
+}

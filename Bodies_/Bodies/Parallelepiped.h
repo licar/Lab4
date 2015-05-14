@@ -17,10 +17,12 @@ public:
 	double GetHeight() const;
 	double GetWidht() const;
 	double GetDeep() const;
+	string GetInfo() const override final;
 
 private:
 	double m_height;
 	double m_widht;
 	double m_deep;
+	string GetName() const;
 };
 

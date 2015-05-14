@@ -12,8 +12,11 @@ public:
 	double GetVolume() const override final;
 	double GetHeight() const;
 	double GetRadius() const;
+	string GetInfo() const override final;
+
 private:
 	double m_height;
 	double m_radius;
+	string GetName() const;
 };
 

@@ -8,7 +8,6 @@ public:
 	~CSolidBody();
 
 	virtual double GetDensity() const override final;
-
 	virtual double GetMass() const override final;
 
 private:

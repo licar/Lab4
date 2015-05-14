@@ -21,3 +21,16 @@ double CSphere::GetVolume() const
 {
 	return (4 * M_PI / 3 * pow(m_radius, 3));
 }
+
+string CSphere::GetName() const
+{
+	return "sphere";
+}
+
+string CSphere::GetInfo() const
+{
+	string info = GetName() + '\n' +
+		"radius = " + to_string(GetRadius()) + '\n' +
+		"value = " + to_string(GetVolume()) + '\n' +
+		"mass = " + to_string(GetMass());
+}

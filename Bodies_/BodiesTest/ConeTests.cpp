@@ -47,10 +47,7 @@ BOOST_AUTO_TEST_CASE(HasMass)
 	BOOST_CHECK_EQUAL(cone.GetMass(), EXPECTED_MASS);
 	CBody & coneAsBody = cone;
 	BOOST_CHECK_EQUAL(coneAsBody.GetMass(), EXPECTED_MASS);
-
-
 }
-
 
 BOOST_AUTO_TEST_SUITE_END()
 

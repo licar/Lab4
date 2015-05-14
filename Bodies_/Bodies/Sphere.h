@@ -11,8 +11,10 @@ public:
 	// методы, переопредел€ющие методы базовых классов, рекомендуетс€ 
 	// объ€вл€ть со спецификатором override
 	double GetVolume() const override final;
+	string GetInfo() const override final;
 
 private:
 	double m_radius;
+	string GetName() const;
 };
 

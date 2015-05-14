@@ -28,3 +28,18 @@ double CCylinder::GetVolume() const
 {
 	return GetRadius() * GetHeight();
 }
+
+string CCylinder::GetName() const
+{
+	return "cylinder";
+}
+
+string CCylinder::GetInfo() const
+{
+	string info = GetName() + '\n' +
+		"height = " + to_string(GetHeight()) + '\n' +
+		"radius = " + to_string(GetRadius()) + '\n' +
+		"value = " + to_string(GetVolume()) + '\n' +
+		"mass = " + to_string(GetMass());
+}
+
