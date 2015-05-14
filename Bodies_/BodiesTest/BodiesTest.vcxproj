@@ -93,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Bodies\Body.cpp" />
+    <ClCompile Include="..\Bodies\Parallelepiped.cpp" />
     <ClCompile Include="..\Bodies\SolidBody.cpp" />
     <ClCompile Include="..\Bodies\Sphere.cpp" />
     <ClCompile Include="BodiesTest.cpp" />

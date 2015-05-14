@@ -21,7 +21,7 @@ BOOST_FIXTURE_TEST_SUITE(Parallelepiped, ParallelepipedFixture)
 
 BOOST_AUTO_TEST_CASE(HasHeight)
 {
-	BOOST_CHECK(parallelepiped.GetHeight() == 0);
+	BOOST_CHECK_EQUAL(parallelepiped.GetHeight(), EXPECTED_HEIGHT);
 }
 
 BOOST_AUTO_TEST_SUITE_END()
