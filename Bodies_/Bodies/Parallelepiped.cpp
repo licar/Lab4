@@ -52,4 +52,5 @@ string CParallelepiped::GetInfo() const
 		"deep = " + to_string(GetDeep()) + '\n' +
 		"value = " + to_string(GetVolume()) + '\n' +
 		"mass = " + to_string(GetMass());
+	return info;
 }

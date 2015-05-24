@@ -36,6 +36,7 @@ string CCone::GetInfo() const
 		"radius = " + to_string(GetRadius()) + '\n' +
 		"value = " + to_string(GetVolume()) + '\n' +
 		"mass = " + to_string(GetMass());
+	return info;
 }
 
 string CCone::GetName() const
