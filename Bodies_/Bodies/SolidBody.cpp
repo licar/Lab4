@@ -18,5 +18,5 @@ double CSolidBody::GetDensity() const
 
 double CSolidBody::GetMass() const
 {
-	return m_density * GetVolume();
+	return (m_density * GetVolume());
 }

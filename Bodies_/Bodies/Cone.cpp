@@ -26,7 +26,7 @@ double CCone::GetRadius() const
 
 double CCone::GetVolume() const
 {
-	return 1 / 3 * M_PI *  GetRadius() * GetRadius() * GetHeight();
+	return  (GetRadius() * GetRadius() * GetHeight() * M_PI / 3);
 }
 
 string CCone::GetInfo() const

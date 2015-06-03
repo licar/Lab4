@@ -10,8 +10,8 @@
 #include "iostream"
 #include <vector>
 
-typedef vector<unique_ptr<CBody>> PtrsToBodies;
-typedef unique_ptr<CBody> PtrToBody;
+typedef vector<shared_ptr<CBody>> PtrsToBodies;
+typedef shared_ptr<CBody> PtrToBody;
 using namespace std;
 
 PtrsToBodies GetBodiesAndAddToVector()
@@ -93,17 +93,17 @@ PtrsToBodies GetBodiesAndAddToVector()
 	return bodies;
 }
 
-unique_ptr<CBody> FindBodyWithHighestMass(
+PtrToBody FindBodyWithHighestMass(
 	PtrsToBodies const &bodies)
 {
-	unique_ptr<CBody> highestMassBody;
-	highestMassBody.reset(bodies[0].get());
+	PtrToBody highestMassBody;
+	highestMassBody = bodies[0];
 
 	for (size_t i = 1; i != bodies.size(); ++i)
 	{
 		if (bodies[i]->GetMass() > highestMassBody->GetMass())
 		{
-			highestMassBody.reset(bodies[i].get());
+			highestMassBody = bodies[i];
 		}
 	}
 	return highestMassBody;
@@ -116,7 +116,7 @@ bool ComparisonIsCurrBodyHaveLessWeight(
 	const double G = 9.8;
 	
 	double currBodyWeight = (currBody->GetDensity() - WATER_DENSITY) *
-		G * currBody->GetVolume();
+		9.8 * currBody->GetVolume();
 
 	if (currBodyWeight < lowestWeight)
 	{
@@ -137,7 +137,7 @@ PtrToBody FindBodyWithLowerWeight(
 		if (ComparisonIsCurrBodyHaveLessWeight(
 			bodies[i], lowestWeight))
 		{
-			esiestWeightBody.reset(bodies[i].get());
+			esiestWeightBody = bodies[i];
 		}
 	}
 	return esiestWeightBody;
@@ -149,11 +149,17 @@ int _tmain(int argc, _TCHAR* argv[])
 	PtrToBody highestMassBody = FindBodyWithHighestMass(bodies);
 	PtrToBody lowerWeightBody = FindBodyWithLowerWeight(bodies);
 
-	cout << "body with highest mass :\n";
-	cout << highestMassBody->GetInfo();
-	cout << "\nbody with lower weight :\n";
-	cout << lowerWeightBody->GetInfo();
+	if (highestMassBody)
+	{
+		cout << "body with highest mass :\n";
+		cout << highestMassBody->GetInfo();
+	}
 
+	if (lowerWeightBody)
+	{
+		cout << "\nbody with lower weight :\n";
+		cout << lowerWeightBody->GetInfo();
+	}
 	return 0;
 }
 

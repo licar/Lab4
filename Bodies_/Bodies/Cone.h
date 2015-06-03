@@ -8,10 +8,10 @@ public:
 	CCone(double height, double radius, double dansity);
 	~CCone();
 
-	double GetVolume() const override final;
+	double GetVolume() const final;
 	double GetHeight() const;
 	double GetRadius() const;
-	string GetInfo() const override final;
+	string GetInfo() const final;
 
 private:
 	double m_radius;
