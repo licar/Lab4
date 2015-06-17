@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include "../task2/Person.h"
+#include "../task2/University.h"
 
 BOOST_AUTO_TEST_CASE(TestPerson)
 {
@@ -28,4 +29,13 @@ BOOST_AUTO_TEST_CASE(TestPerson)
 	BOOST_CHECK_EQUAL(person.GetGrowth(), 190);
 	person.SetGrowth(185);
 	BOOST_CHECK_EQUAL(person.GetGrowth(), 190);
+}
+
+BOOST_AUTO_TEST_CASE(TestUniversity)
+{
+	CUniversity university("Volgatech");
+	BOOST_CHECK_EQUAL(university.GetUniversity(), "Volgatech");
+
+	university.SetUniversity("VolgaVolgatech");
+	BOOST_CHECK_EQUAL(university.GetUniversity(), "VolgaVolgatech");
 }
