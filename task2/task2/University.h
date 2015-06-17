@@ -6,23 +6,24 @@ class CUniversity
 {
 public:
 	CUniversity(string university)
-		:m_university(move(university))
+		:m_name(move(university))
 	{}
 
 	~CUniversity()
 	{}
 
-	string GetUniversity() const
+	string GetName() const
 	{
-		return m_university;
+		return m_name;
 	}
 
-	void SetUniversity(string university)
+	void SetName(string name)
 	{
-		m_university = move(university);
+		m_name = move(name);
 	}
+
 
 private:
-	string m_university;
+	string m_name;
 };
 

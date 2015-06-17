@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "../task2/Person.h"
 #include "../task2/University.h"
+#include "../task2/Student.h"
 
 BOOST_AUTO_TEST_CASE(TestPerson)
 {
@@ -34,8 +35,32 @@ BOOST_AUTO_TEST_CASE(TestPerson)
 BOOST_AUTO_TEST_CASE(TestUniversity)
 {
 	CUniversity university("Volgatech");
-	BOOST_CHECK_EQUAL(university.GetUniversity(), "Volgatech");
+	BOOST_CHECK_EQUAL(university.GetName(), "Volgatech");
 
-	university.SetUniversity("VolgaVolgatech");
-	BOOST_CHECK_EQUAL(university.GetUniversity(), "VolgaVolgatech");
+	university.SetName("VolgaVolgatech");
+	BOOST_CHECK_EQUAL(university.GetName(), "VolgaVolgatech");
+
+}
+
+BOOST_AUTO_TEST_CASE(TestStudent)
+{
+	auto university = make_shared<CUniversity>("Volgatech");
+	CStudent student("Daniel", true, 20, 70, 180, university, 1);
+	BOOST_CHECK_EQUAL(student.GetName(), "Daniel");
+	BOOST_CHECK_EQUAL(student.GetAge(), 20);
+	BOOST_CHECK_EQUAL(student.GetWeight(), 70);
+	BOOST_CHECK_EQUAL(student.GetGrowth(), 180);
+	BOOST_CHECK_EQUAL(student.GetUniversity(), university);
+	BOOST_CHECK(student.IsMale());
+	BOOST_CHECK_EQUAL(student.GetYearOfStudy(), 1);
+	BOOST_CHECK_EQUAL(university->GetName(), "Volgatech");
+
+	auto universityNew = make_shared<CUniversity>("VolgaVolgatech");
+	student.SetUniversity(universityNew);
+	BOOST_CHECK_EQUAL(student.GetUniversity(), universityNew);
+
+	student.SetYearOfStudy(2);
+	BOOST_CHECK_EQUAL(student.GetYearOfStudy(), 2);
+	student.SetYearOfStudy(1);
+	BOOST_CHECK_EQUAL(student.GetYearOfStudy(), 2);
 }

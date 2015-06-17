@@ -9,7 +9,7 @@ class CStudent :
 public:
 	CStudent(string name, bool isMale,
 		int age, int weight, int growth,
-		const shared_ptr<CUniversity> &university, int studyYear)
+		const shared_ptr<CUniversity> university, int studyYear)
 		:CPerson(name, isMale, age, weight, growth), m_university(university)
 	{
 		if (studyYear >= MIN_YEAR && studyYear <= MAX_YEAR)
@@ -33,7 +33,7 @@ public:
 		}
 	}
 
-	void SetUniversity(const weak_ptr<const CUniversity> &university)
+	void SetUniversity(const weak_ptr<CUniversity> university)
 	{
 		m_university = university;
 	}
