@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include <set>
+#include <memory>
 
 using namespace std;
 class CUniversity
