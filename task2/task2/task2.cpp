@@ -42,7 +42,7 @@ void PrintStudentInfo(const shared_ptr<const CStudent> &student)
 	cout << "Growth: " << student->GetGrowth() << endl;
 	cout << "Weight: " << student->GetWeight() << endl;
 	cout << "Study year: " << student->GetYearOfStudy() << endl;
-	cout << "University name: " << student->GetUniversity()->GetName() << endl;
+	cout << "University name: " << student->GetUniversity()->GetName() << endl << endl;
 }
 
 void ChangeUniversityForStudent(const shared_ptr<CUniversity> &university, 
@@ -205,7 +205,7 @@ set<shared_ptr<CStudent>> LoadStudents(const set<shared_ptr<CUniversity>> &unive
 			}
 		}
 
-		bool isMale = (male == "Male");
+		bool isMale = (male == "male");
 	
 		auto student = make_shared<CStudent>(name, isMale, stoi(age), stoi(weight), stoi(growth), university ,stoi(studyYear));
 		students.insert(student);
@@ -219,8 +219,19 @@ void SaveStudents(const set<shared_ptr<CStudent>> &students)
 
 	for (auto &curStudent : students)
 	{
-		fout << curStudent->GetName() << endl << curStudent->GetAge() << endl << curStudent->GetGrowth() << endl << curStudent->GetWeight() << endl;
-		fout << curStudent->GetYearOfStudy() << endl << curStudent->IsMale() << endl << curStudent->GetUniversity()->GetName() << endl;
+		fout << curStudent->GetName() << endl << curStudent->GetAge() << endl << curStudent->GetGrowth() << endl;
+		fout << curStudent->GetWeight() << endl; fout << curStudent->GetYearOfStudy() << endl;
+		
+		if (curStudent->IsMale())
+		{
+			fout << "male" << endl;
+		}
+		else
+		{
+			fout << "female" << endl;
+		}
+
+		fout << curStudent->GetUniversity()->GetName() << endl;
 	}
 }
 
